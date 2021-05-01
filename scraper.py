@@ -81,6 +81,14 @@ def main():
   # holidays list
   holidays_list = []
 
+  # close the overlay layer
+  skip_btn = driver.find_element_by_xpath('/html/body/div[1]/div[3]/a[1]')
+  skip_btn.click()
+
+  # switch to 2022
+  # trigger_btn = driver.find_element_by_xpath('//*[@id="pagecontent_0_documentcontent_0_RptHolidayTab_HlYear_2"]')
+  # trigger_btn.click()
+
   # holidays row XPath
   # 2020 //*[@id="pagecontent_0_documentcontent_0_RptHolidayTabContent_RptHoliday_0_Row_0"]/td[1]/text()
   # 2021 //*[@id="pagecontent_0_documentcontent_0_RptHolidayTabContent_RptHoliday_1_Row_0"]/td[1]/text()
@@ -95,12 +103,12 @@ def main():
           holidays_list.append(split)
       else:
         holidays_list.append(actual_date.text)
-
-  # format date
-  formatted_list = format_date(holidays_list)
-
+  
   if not content_wrapper:
-      print("Requested URL is invalid. Please check.")
+    print("Requested URL is invalid. Please check.")
+  else:
+    # format date
+    formatted_list = format_date(holidays_list)
   
   driver.quit()
 
