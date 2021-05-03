@@ -7,7 +7,7 @@ Python 3.8.2, selenium, pandas, BeautifulSoup, ChromeDriverManager
 - Install dependencies
 
 ```
-pip3 install requirements.txt
+pip3 install -r requirements.txt
 ```
 
 - Execute script
